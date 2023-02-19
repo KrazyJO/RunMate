@@ -14,6 +14,7 @@
 		C4CC9ED729A2971400117D9E /* RunMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9ED629A2971400117D9E /* RunMateTests.swift */; };
 		C4CC9EE129A2971400117D9E /* RunMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EE029A2971400117D9E /* RunMateUITests.swift */; };
 		C4CC9EE329A2971400117D9E /* RunMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EE229A2971400117D9E /* RunMateUITestsLaunchTests.swift */; };
+		C4CC9EF129A2A2D000117D9E /* Text+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EF029A2A2D000117D9E /* Text+Attributes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		C4CC9EDC29A2971400117D9E /* RunMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CC9EE029A2971400117D9E /* RunMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateUITests.swift; sourceTree = "<group>"; };
 		C4CC9EE229A2971400117D9E /* RunMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C4CC9EF029A2A2D000117D9E /* Text+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Attributes.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		C4CC9EC429A2971300117D9E /* RunMate */ = {
 			isa = PBXGroup;
 			children = (
+				C4CC9EEF29A2A2BB00117D9E /* Extensions */,
 				C4CC9EC529A2971300117D9E /* RunMateApp.swift */,
 				C4CC9EC729A2971300117D9E /* ContentView.swift */,
 				C4CC9EC929A2971300117D9E /* Assets.xcassets */,
@@ -125,6 +128,14 @@
 				C4CC9EE229A2971400117D9E /* RunMateUITestsLaunchTests.swift */,
 			);
 			path = RunMateUITests;
+			sourceTree = "<group>";
+		};
+		C4CC9EEF29A2A2BB00117D9E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C4CC9EF029A2A2D000117D9E /* Text+Attributes.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 			files = (
 				C4CC9EC829A2971300117D9E /* ContentView.swift in Sources */,
 				C4CC9EC629A2971300117D9E /* RunMateApp.swift in Sources */,
+				C4CC9EF129A2A2D000117D9E /* Text+Attributes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
