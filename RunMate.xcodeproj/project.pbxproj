@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C422251A29AA5F1400649908 /* ActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422251929AA5F1400649908 /* ActionButtons.swift */; };
+		C422251C29AA701E00649908 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422251B29AA701E00649908 /* Icons.swift */; };
+		C422251E29AA756000649908 /* CreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422251D29AA756000649908 /* CreatorView.swift */; };
+		C422252029AB7AFD00649908 /* View+EdgeBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422251F29AB7AFD00649908 /* View+EdgeBorder.swift */; };
+		C422252329ABDD4200649908 /* TimeSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422252229ABDD4200649908 /* TimeSelectorView.swift */; };
+		C422252529ABE12000649908 /* RoundsSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422252429ABE12000649908 /* RoundsSelectorView.swift */; };
 		C4CC9EC629A2971300117D9E /* RunMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EC529A2971300117D9E /* RunMateApp.swift */; };
-		C4CC9EC829A2971300117D9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EC729A2971300117D9E /* ContentView.swift */; };
+		C4CC9EC829A2971300117D9E /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EC729A2971300117D9E /* TimerView.swift */; };
 		C4CC9ECA29A2971300117D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CC9EC929A2971300117D9E /* Assets.xcassets */; };
 		C4CC9ECD29A2971300117D9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CC9ECC29A2971300117D9E /* Preview Assets.xcassets */; };
 		C4CC9ED729A2971400117D9E /* RunMateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9ED629A2971400117D9E /* RunMateTests.swift */; };
@@ -35,9 +41,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C422251929AA5F1400649908 /* ActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtons.swift; sourceTree = "<group>"; };
+		C422251B29AA701E00649908 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
+		C422251D29AA756000649908 /* CreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorView.swift; sourceTree = "<group>"; };
+		C422251F29AB7AFD00649908 /* View+EdgeBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+EdgeBorder.swift"; sourceTree = "<group>"; };
+		C422252229ABDD4200649908 /* TimeSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectorView.swift; sourceTree = "<group>"; };
+		C422252429ABE12000649908 /* RoundsSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsSelectorView.swift; sourceTree = "<group>"; };
 		C4CC9EC229A2971300117D9E /* RunMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CC9EC529A2971300117D9E /* RunMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateApp.swift; sourceTree = "<group>"; };
-		C4CC9EC729A2971300117D9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C4CC9EC729A2971300117D9E /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		C4CC9EC929A2971300117D9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C4CC9ECC29A2971300117D9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C4CC9ED229A2971400117D9E /* RunMateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunMateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +85,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C422252129ABDD0600649908 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C422251D29AA756000649908 /* CreatorView.swift */,
+				C4CC9EC729A2971300117D9E /* TimerView.swift */,
+				C422252229ABDD4200649908 /* TimeSelectorView.swift */,
+				C422252429ABE12000649908 /* RoundsSelectorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C4CC9EB929A2971300117D9E = {
 			isa = PBXGroup;
 			children = (
@@ -96,9 +119,11 @@
 		C4CC9EC429A2971300117D9E /* RunMate */ = {
 			isa = PBXGroup;
 			children = (
+				C422252129ABDD0600649908 /* Views */,
 				C4CC9EEF29A2A2BB00117D9E /* Extensions */,
 				C4CC9EC529A2971300117D9E /* RunMateApp.swift */,
-				C4CC9EC729A2971300117D9E /* ContentView.swift */,
+				C422251929AA5F1400649908 /* ActionButtons.swift */,
+				C422251B29AA701E00649908 /* Icons.swift */,
 				C4CC9EC929A2971300117D9E /* Assets.xcassets */,
 				C4CC9ECB29A2971300117D9E /* Preview Content */,
 			);
@@ -134,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				C4CC9EF029A2A2D000117D9E /* Text+Attributes.swift */,
+				C422251F29AB7AFD00649908 /* View+EdgeBorder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -268,9 +294,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4CC9EC829A2971300117D9E /* ContentView.swift in Sources */,
+				C4CC9EC829A2971300117D9E /* TimerView.swift in Sources */,
 				C4CC9EC629A2971300117D9E /* RunMateApp.swift in Sources */,
 				C4CC9EF129A2A2D000117D9E /* Text+Attributes.swift in Sources */,
+				C422251C29AA701E00649908 /* Icons.swift in Sources */,
+				C422252329ABDD4200649908 /* TimeSelectorView.swift in Sources */,
+				C422251A29AA5F1400649908 /* ActionButtons.swift in Sources */,
+				C422252029AB7AFD00649908 /* View+EdgeBorder.swift in Sources */,
+				C422252529ABE12000649908 /* RoundsSelectorView.swift in Sources */,
+				C422251E29AA756000649908 /* CreatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
