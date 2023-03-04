@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import AVFAudio
 
 struct TimerView: View {
     @State private var remainingTime: Int = (0*60)+5
     @State private var isRunning = true
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var playPauseIcon = Icons.pause
+    
+    @State var audioPlayer: AVAudioPlayer!
     
     private var timeString: String {
         let (_,m,s) = secondsToHoursMinutesSeconds(remainingTime)
@@ -32,7 +35,6 @@ struct TimerView: View {
                             timerEvent()
                     }
                     
-                
                 Text("Round 1 of 4").normal()
                     .padding(EdgeInsets.init(top: 0, leading: 0, bottom: 10, trailing: 0))
                 ZStack {
@@ -60,8 +62,22 @@ struct TimerView: View {
     private func timerEvent() {
         countDownTimer()
         if timeIsOver() {
+            playSound()
             stopTimer()
         }
+    }
+    
+    private func playSound() {
+        guard let soundURL = Bundle.main.url(forResource: "beep", withExtension: "wav") else {
+            return
+        }
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+        } catch {
+            print(error.localizedDescription)
+        }
+        audioPlayer.play()
     }
     
     private func countDownTimer() {

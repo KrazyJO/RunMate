@@ -21,6 +21,10 @@
 		C4CC9EE129A2971400117D9E /* RunMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EE029A2971400117D9E /* RunMateUITests.swift */; };
 		C4CC9EE329A2971400117D9E /* RunMateUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EE229A2971400117D9E /* RunMateUITestsLaunchTests.swift */; };
 		C4CC9EF129A2A2D000117D9E /* Text+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EF029A2A2D000117D9E /* Text+Attributes.swift */; };
+		C4DB827129B372E2004A16A7 /* TimerDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DB827029B372E2004A16A7 /* TimerDefinition.swift */; };
+		C4DB827329B3754A004A16A7 /* TimerDefinitionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4DB827229B3754A004A16A7 /* TimerDefinitionTest.swift */; };
+		C4DB827729B3AE0E004A16A7 /* sport-start.wav in Resources */ = {isa = PBXBuildFile; fileRef = C4DB827529B3AE0E004A16A7 /* sport-start.wav */; };
+		C4DB827829B3AE0E004A16A7 /* beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = C4DB827629B3AE0E004A16A7 /* beep.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		C4CC9EE029A2971400117D9E /* RunMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateUITests.swift; sourceTree = "<group>"; };
 		C4CC9EE229A2971400117D9E /* RunMateUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C4CC9EF029A2A2D000117D9E /* Text+Attributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Attributes.swift"; sourceTree = "<group>"; };
+		C4DB827029B372E2004A16A7 /* TimerDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDefinition.swift; sourceTree = "<group>"; };
+		C4DB827229B3754A004A16A7 /* TimerDefinitionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerDefinitionTest.swift; sourceTree = "<group>"; };
+		C4DB827529B3AE0E004A16A7 /* sport-start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "sport-start.wav"; sourceTree = "<group>"; };
+		C4DB827629B3AE0E004A16A7 /* beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +127,7 @@
 		C4CC9EC429A2971300117D9E /* RunMate */ = {
 			isa = PBXGroup;
 			children = (
+				C4DB827429B3ADF9004A16A7 /* Resources */,
 				C422252129ABDD0600649908 /* Views */,
 				C4CC9EEF29A2A2BB00117D9E /* Extensions */,
 				C4CC9EC529A2971300117D9E /* RunMateApp.swift */,
@@ -126,6 +135,7 @@
 				C422251B29AA701E00649908 /* Icons.swift */,
 				C4CC9EC929A2971300117D9E /* Assets.xcassets */,
 				C4CC9ECB29A2971300117D9E /* Preview Content */,
+				C4DB827029B372E2004A16A7 /* TimerDefinition.swift */,
 			);
 			path = RunMate;
 			sourceTree = "<group>";
@@ -142,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				C4CC9ED629A2971400117D9E /* RunMateTests.swift */,
+				C4DB827229B3754A004A16A7 /* TimerDefinitionTest.swift */,
 			);
 			path = RunMateTests;
 			sourceTree = "<group>";
@@ -162,6 +173,15 @@
 				C422251F29AB7AFD00649908 /* View+EdgeBorder.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C4DB827429B3ADF9004A16A7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C4DB827629B3AE0E004A16A7 /* beep.wav */,
+				C4DB827529B3AE0E004A16A7 /* sport-start.wav */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,8 +288,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4DB827829B3AE0E004A16A7 /* beep.wav in Resources */,
 				C4CC9ECD29A2971300117D9E /* Preview Assets.xcassets in Resources */,
 				C4CC9ECA29A2971300117D9E /* Assets.xcassets in Resources */,
+				C4DB827729B3AE0E004A16A7 /* sport-start.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +318,7 @@
 			files = (
 				C4CC9EC829A2971300117D9E /* TimerView.swift in Sources */,
 				C4CC9EC629A2971300117D9E /* RunMateApp.swift in Sources */,
+				C4DB827129B372E2004A16A7 /* TimerDefinition.swift in Sources */,
 				C4CC9EF129A2A2D000117D9E /* Text+Attributes.swift in Sources */,
 				C422251C29AA701E00649908 /* Icons.swift in Sources */,
 				C422252329ABDD4200649908 /* TimeSelectorView.swift in Sources */,
@@ -310,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4DB827329B3754A004A16A7 /* TimerDefinitionTest.swift in Sources */,
 				C4CC9ED729A2971400117D9E /* RunMateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

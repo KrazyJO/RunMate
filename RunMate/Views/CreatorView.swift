@@ -54,12 +54,16 @@ struct CreatorView: View {
                         .presentationDetents([.medium, .large])
                         .presentationDragIndicator(.hidden)
                 }
+                
+                Button("START") {
+                    
+                }.padding(.top, 20).font(.system(size: 32))
+                
+                
             }
             .navigationTitle("Setup")
             .navigationBarTitleDisplayMode(.inline)
         }
-        
-        
     }
 }
 
