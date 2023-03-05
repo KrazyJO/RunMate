@@ -16,28 +16,43 @@ enum RoundType {
 struct Step {
     let type: RoundType
     let time: Int
+    let round: Int
 }
 
-class TimerDefinition {
+class TimerDefinition: ObservableObject {
     
     var stack = [Step]()
-    private var stepCounter = 0
+    @Published var stepCounter = 0
+    var rounds: Int
     
     var currentStep: Step? {
+        if stepCounter >= stack.count {
+            return nil
+        }
         return stack[stepCounter]
     }
     
     init(preparation: Int, workout: Int, pause: Int, rounds: Int) {
-        stack.append(Step(type: .preparation, time: preparation))
-        for _ in 1...rounds {
-            stack.append(Step(type: .workout, time: workout))
-            stack.append(Step(type: .pause, time: pause))
+        self.rounds = rounds
+        stack.append(Step(type: .preparation, time: preparation, round: 1))
+        for round in 1...rounds {
+            stack.append(Step(type: .workout, time: workout, round: round))
+            stack.append(Step(type: .pause, time: pause, round: round))
         }
         stack.removeLast()
     }
     
     func nextStep() {
-        stepCounter = stepCounter + 1
+        if stepCounter < stack.count {
+            stepCounter = stepCounter + 1
+        }
+    }
+    
+    func previousStep() {
+        if stepCounter > 0 {
+            stepCounter = stepCounter - 1
+        }
+        
     }
     
 }

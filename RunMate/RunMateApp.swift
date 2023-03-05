@@ -11,7 +11,8 @@ import SwiftUI
 struct RunMateApp: App {
     var body: some Scene {
         WindowGroup {
-            TimerView()
+            let definition = TimerDefinition(preparation: 20, workout: 120, pause: 30, rounds: 4)
+            TimerView(definition: definition)
         }
     }
 }

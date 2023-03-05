@@ -37,6 +37,31 @@ class TimerDefinitionTest: XCTestCase {
         XCTAssertEqual(definition.stack.count, 4)
     }
     
+    func testNextStepOnLastStep() {
+        let definition = TimerDefinition(preparation: 10, workout: 30, pause: 10, rounds: 2)
+        definition.nextStep()
+        definition.nextStep()
+        definition.nextStep()
+        definition.nextStep()
+        definition.nextStep()
+        definition.nextStep()
+        XCTAssertEqual(definition.stepCounter, 4)
+    }
+    
+    func testPreviousStep() {
+        let definition = TimerDefinition(preparation: 10, workout: 30, pause: 10, rounds: 2)
+        definition.nextStep()
+        definition.nextStep()
+        definition.previousStep()
+        XCTAssertEqual(definition.stepCounter, 1)
+    }
+    
+    func testPreviousStepOnFirstStep() {
+        let definition = TimerDefinition(preparation: 10, workout: 30, pause: 10, rounds: 2)
+        definition.previousStep()
+        XCTAssertEqual(definition.stepCounter, 0)
+    }
+    
     func testCurrentStep() {
         let definition = TimerDefinition(preparation: 10, workout: 30, pause: 10, rounds: 2)
         var currentStep = definition.currentStep

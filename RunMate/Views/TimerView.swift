@@ -9,12 +9,14 @@ import SwiftUI
 import AVFAudio
 
 struct TimerView: View {
-    @State private var remainingTime: Int = (0*60)+5
+    @State private var remainingTime = 0
     @State private var isRunning = true
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     @State private var playPauseIcon = Icons.pause
     
-    @State var audioPlayer: AVAudioPlayer!
+    @State private var audioPlayer: AVAudioPlayer?
+    
+    @StateObject var definition: TimerDefinition
     
     private var timeString: String {
         let (_,m,s) = secondsToHoursMinutesSeconds(remainingTime)
@@ -27,27 +29,65 @@ struct TimerView: View {
     
     var body: some View {
         ZStack {
+            if definition.currentStep?.type == .workout {
+                Color.green.opacity(0.4)
+            } else if definition.currentStep?.type == .pause {
+                Color.red.opacity(0.4)
+            } else {
+                Color.yellow.opacity(0.4)
+            }
+            
             VStack {
-                Text("Distance: 2.4km").normal()
-                Text("fast").normal()
+                Text(typeToString()).font(.system(size: 46)).padding(.top, 50)
+                Spacer().frame(height: 50.0)
+                
+                Text(roundText())
+                    .normal()
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
+                
                 Text(timeString).large()
                     .onReceive(timer) { time in
                             timerEvent()
-                    }
-                    
-                Text("Round 1 of 4").normal()
-                    .padding(EdgeInsets.init(top: 0, leading: 0, bottom: 10, trailing: 0))
+                    }.padding(.bottom, 10)
+                
                 ZStack {
                     ActionButtons(playPauseIcon: playPauseIcon) {
-                        print("forward")
+                        forwardPressed()
                     } backwardAction: {
-                        print("backward")
+                        backwardPressed()
                     } playPauseAction: {
                         playPausePressed()
                     }
                 }
-                Text("distance: 2,4km").normal()
+                Text("distance: 2,4km")
+                    .normal()
+                    .padding(.top, 100)
+                Spacer()
             }
+        }.onAppear {
+            resetRemainingTimeToCurrentStep()
+        }.edgesIgnoringSafeArea(.all)
+    }
+    
+    private func roundText() -> String {
+        if let round = definition.currentStep?.round {
+            let maxRounds = definition.rounds
+            return "Round \(round) of \(maxRounds)"
+        }
+        
+        return ""
+    }
+    
+    private func typeToString() -> String {
+        switch definition.currentStep?.type {
+        case .workout:
+            return "Workout"
+        case .preparation:
+            return "Preparation"
+        case .pause:
+            return "Pause"
+        case .none:
+            return "End"
         }
     }
     
@@ -59,12 +99,38 @@ struct TimerView: View {
         }
     }
     
+    private func backwardPressed() {
+        previousStep()
+    }
+    
+    private func forwardPressed() {
+        nextStep()
+    }
+    
     private func timerEvent() {
         countDownTimer()
         if timeIsOver() {
             playSound()
+            nextStep()
+        }
+    }
+    
+    private func resetRemainingTimeToCurrentStep() {
+        if let step = definition.currentStep {
+            remainingTime = step.time
+        } else {
             stopTimer()
         }
+    }
+    
+    private func nextStep() {
+        definition.nextStep()
+        resetRemainingTimeToCurrentStep()
+    }
+    
+    private func previousStep() {
+        definition.previousStep()
+        resetRemainingTimeToCurrentStep()
     }
     
     private func playSound() {
@@ -74,10 +140,10 @@ struct TimerView: View {
         
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: soundURL)
+            audioPlayer!.play()
         } catch {
             print(error.localizedDescription)
         }
-        audioPlayer.play()
     }
     
     private func countDownTimer() {
@@ -116,6 +182,7 @@ struct TimerView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView()
+        let definition = TimerDefinition(preparation: 2, workout: 5, pause: 2, rounds: 2)
+        TimerView(definition: definition)
     }
 }
