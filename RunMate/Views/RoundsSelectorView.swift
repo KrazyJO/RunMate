@@ -10,7 +10,7 @@ import SwiftUI
 struct RoundsSelectorView: View {
     @Environment(\.dismiss) var dismiss
     @Binding var roundsSelected: Int
-    
+
     var rounds = 0...10
 
     var body: some View {
@@ -24,7 +24,7 @@ struct RoundsSelectorView: View {
                     }
                     .pickerStyle(.wheel)
                     .padding(.top, 20)
-                    
+
                     HStack {
                         Spacer()
                         Button("Ok") {
@@ -34,7 +34,7 @@ struct RoundsSelectorView: View {
                         Spacer()
                     }
                 }
-                
+
             }
         }
         .navigationTitle("Select your rounds")

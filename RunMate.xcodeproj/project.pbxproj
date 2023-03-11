@@ -15,6 +15,8 @@
 		C422252529ABE12000649908 /* RoundsSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C422252429ABE12000649908 /* RoundsSelectorView.swift */; };
 		C46212C529BCB3C3003F380B /* DateFormatter+SecToTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46212C429BCB3C3003F380B /* DateFormatter+SecToTime.swift */; };
 		C46212C729BCB3FB003F380B /* DateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46212C629BCB3FB003F380B /* DateFormatterTest.swift */; };
+		C46212CC29BCCBB3003F380B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C46212CB29BCCBB3003F380B /* .swiftlint.yml */; };
+		C46212CF29BCCF52003F380B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C46212CE29BCCF52003F380B /* README.md */; };
 		C4CC9EC629A2971300117D9E /* RunMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EC529A2971300117D9E /* RunMateApp.swift */; };
 		C4CC9EC829A2971300117D9E /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EC729A2971300117D9E /* TimerView.swift */; };
 		C4CC9ECA29A2971300117D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CC9EC929A2971300117D9E /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 		C422252429ABE12000649908 /* RoundsSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundsSelectorView.swift; sourceTree = "<group>"; };
 		C46212C429BCB3C3003F380B /* DateFormatter+SecToTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+SecToTime.swift"; sourceTree = "<group>"; };
 		C46212C629BCB3FB003F380B /* DateFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTest.swift; sourceTree = "<group>"; };
+		C46212CB29BCCBB3003F380B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		C46212CE29BCCF52003F380B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C4CC9EC229A2971300117D9E /* RunMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CC9EC529A2971300117D9E /* RunMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateApp.swift; sourceTree = "<group>"; };
 		C4CC9EC729A2971300117D9E /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				C4CC9EC429A2971300117D9E /* RunMate */,
 				C4CC9ED529A2971400117D9E /* RunMateTests */,
 				C4CC9EDF29A2971400117D9E /* RunMateUITests */,
+				C46212CE29BCCF52003F380B /* README.md */,
+				C46212CB29BCCBB3003F380B /* .swiftlint.yml */,
 				C4CC9EC329A2971300117D9E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -200,6 +206,7 @@
 				C4CC9EBE29A2971300117D9E /* Sources */,
 				C4CC9EBF29A2971300117D9E /* Frameworks */,
 				C4CC9EC029A2971300117D9E /* Resources */,
+				C46212CA29BCC9DB003F380B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -294,6 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46212CF29BCCF52003F380B /* README.md in Resources */,
+				C46212CC29BCCBB3003F380B /* .swiftlint.yml in Resources */,
 				C4DB827829B3AE0E004A16A7 /* beep.wav in Resources */,
 				C4CC9ECD29A2971300117D9E /* Preview Assets.xcassets in Resources */,
 				C4CC9ECA29A2971300117D9E /* Assets.xcassets in Resources */,
@@ -316,6 +325,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C46212CA29BCC9DB003F380B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4CC9EBE29A2971300117D9E /* Sources */ = {
@@ -496,6 +525,8 @@
 				DEVELOPMENT_TEAM = Q29WG5YMU3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = RunMate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -525,6 +556,8 @@
 				DEVELOPMENT_TEAM = Q29WG5YMU3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = RunMate;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

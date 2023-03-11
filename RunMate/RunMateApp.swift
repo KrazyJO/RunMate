@@ -9,10 +9,10 @@ import SwiftUI
 
 @main
 struct RunMateApp: App {
-    
+
     var body: some Scene {
         WindowGroup {
-            NavigationStack() {
+            NavigationStack {
                 // Einstiegsview: Setup, Kalender, Starten
                 CreatorView()
             }

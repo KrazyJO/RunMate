@@ -10,25 +10,25 @@ import SwiftUI
 struct TimeSelectorView: View {
     @Environment(\.dismiss) var dismiss
     @Binding var secondsSelected: Int
-    
+
     @State var selectedMinutes = 0
     @State var selectedSeconds = 0
-    
+
     private let seconds = 0...60
     private let minutes = 0...99
-    
+
     private func calcSecsAndMinsForWheels() {
         if secondsSelected < 1 {
             return
         }
-        
+
         let mins = secondsSelected / 60
         let secs = secondsSelected - (mins * 60)
-        
+
         selectedMinutes = mins
         selectedSeconds = secs
     }
-    
+
     func calcSelectedToSeconds() {
         secondsSelected = (selectedMinutes * 60) + selectedSeconds
     }
@@ -43,15 +43,14 @@ struct TimeSelectorView: View {
                                 Text("\($0) min").foregroundColor(.blue)
                             }
                         }.pickerStyle(.wheel)
-                        
+
                         Picker("Seconds", selection: $selectedSeconds) {
                             ForEach(seconds, id: \.self) {
                                 Text("\($0) sec").foregroundColor(.blue)
                             }
                         }.pickerStyle(.wheel)
                     }
-                    
-                    
+
                     HStack {
                         Spacer()
                         Button("Ok") {
@@ -70,7 +69,7 @@ struct TimeSelectorView: View {
                         Spacer()
                     }
                 }
-                
+
             }
         }
         .navigationTitle("Select your rounds")
@@ -82,7 +81,7 @@ struct TimeSelectorView: View {
 }
 
 struct TimeSelectorView_Previews: PreviewProvider {
-    
+
     static var previews: some View {
         TimeSelectorView(secondsSelected: .constant(184))
     }

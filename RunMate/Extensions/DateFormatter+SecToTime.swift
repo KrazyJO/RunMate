@@ -17,7 +17,7 @@ extension DateFormatter {
         } else {
             formatter.dateFormat = "hh:mm:ss"
         }
-        
+
         let formatted = formatter.string(from: Date(timeIntervalSinceReferenceDate: interval))
         return formatted
     }

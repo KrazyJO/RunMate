@@ -14,20 +14,20 @@ enum ActionsTypes {
 }
 
 struct ActionButtons: View {
-    
+
     private let forwardAction: (() -> Void)?
     private let backwardAction: (() -> Void)?
     private let playPauseAction: (() -> Void)?
 
     private var playPauseButtonIcon: Icons
-    
+
     init(playPauseIcon: Icons, forwardAction: ( () -> Void)? = nil, backwardAction: ( () -> Void)? = nil, playPauseAction: ( () -> Void)? = nil) {
         self.playPauseButtonIcon = playPauseIcon
         self.forwardAction = forwardAction
         self.backwardAction = backwardAction
         self.playPauseAction = playPauseAction
     }
-    
+
     var body: some View {
         HStack {
             Spacer()

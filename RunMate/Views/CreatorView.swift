@@ -13,12 +13,12 @@ struct CreatorView: View {
     @State private var showPreparationsSheet = false
     @State private var showWorkoutSheet = false
     @State private var showPauseSheet = false
-    
+
     @State private var roundsSelected = 1
     @State private var prepariontsSelection = 0
     @State private var workoutSelection = 0
     @State private var pauseSelection = 0
-    
+
     func timeToString(seconds: Int) -> String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.second]
@@ -27,14 +27,14 @@ struct CreatorView: View {
         }
         formatter.zeroFormattingBehavior = .pad
         formatter.unitsStyle = .brief
-        
+
         let formatted = formatter.string(from: TimeInterval(seconds)) ?? ""
         return formatted
     }
-    
+
     var body: some View {
         VStack {
-            
+
             Button("Preparation: \(timeToString(seconds: prepariontsSelection))") {
                 showPreparationsSheet.toggle()
             }.padding(.bottom, 5)
@@ -43,7 +43,7 @@ struct CreatorView: View {
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.hidden)
             }
-            
+
             Button("Workout: \(timeToString(seconds: workoutSelection))") {
                 showWorkoutSheet.toggle()
             }.padding(.bottom, 5)
@@ -52,7 +52,7 @@ struct CreatorView: View {
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.hidden)
             }
-            
+
             Button("Pause: \(timeToString(seconds: pauseSelection))") {
                 showPauseSheet.toggle()
             }.padding(.bottom, 5)
@@ -61,7 +61,7 @@ struct CreatorView: View {
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.hidden)
             }
-            
+
             Button("Rounds: \(roundsSelected)") {
                 showRoundsSheets.toggle()
             }.padding(.bottom, 5)
@@ -70,12 +70,12 @@ struct CreatorView: View {
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.hidden)
             }
-            
+
             NavigationLink("START") {
                 let def = TimerDefinition(preparation: prepariontsSelection, workout: workoutSelection, pause: pauseSelection, rounds: roundsSelected)
                 TimerView(definition: def)
             }.padding(.top, 20).font(.system(size: 32))
-            
+
         }
         .navigationTitle("Setup")
         .navigationBarTitleDisplayMode(.inline)
