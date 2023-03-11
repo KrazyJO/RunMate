@@ -9,6 +9,8 @@ import SwiftUI
 import AVFAudio
 
 struct TimerView: View {
+    @Environment(\.presentationMode) var presentation
+    
     @State private var remainingTime = 0
     @State private var isRunning = true
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -62,11 +64,15 @@ struct TimerView: View {
                 Text("distance: 2,4km")
                     .normal()
                     .padding(.top, 100)
+                Button("Stop and  Back") {
+                    self.presentation.wrappedValue.dismiss()
+                }
                 Spacer()
             }
         }.onAppear {
             resetRemainingTimeToCurrentStep()
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
     
     private func roundText() -> String {

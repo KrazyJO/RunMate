@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct RunMateApp: App {
+    @State private var presentedViews: [TimerView] = []
+    
     var body: some Scene {
         WindowGroup {
-            let definition = TimerDefinition(preparation: 20, workout: 120, pause: 30, rounds: 4)
-            TimerView(definition: definition)
+            NavigationStack() {
+                // Einstiegsview: Setup, Kalender, Starten
+                CreatorView()
+            }
         }
     }
 }

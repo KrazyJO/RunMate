@@ -35,7 +35,7 @@ struct ActionButtons: View {
                 doAction(type: .backward)
             } label: {
                 Image(systemName: Icons.backward.rawValue)
-                    .font(.system(size: 78))
+                    .font(.system(size: 62))
             }
             Spacer()
             Button {
@@ -48,7 +48,7 @@ struct ActionButtons: View {
                 doAction(type: .forward)
             } label: {
                 Image(systemName: Icons.forward.rawValue)
-                    .font(.system(size: 78))
+                    .font(.system(size: 62))
             }
             Spacer()
         }
