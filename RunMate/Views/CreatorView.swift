@@ -19,28 +19,44 @@ struct CreatorView: View {
     @State private var workoutSelection = 0
     @State private var pauseSelection = 0
     
+    func timeToString(seconds: Int) -> String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second]
+        if seconds > 59 {
+            formatter.allowedUnits.insert(.minute)
+        }
+        formatter.zeroFormattingBehavior = .pad
+        formatter.unitsStyle = .brief
+        
+        let formatted = formatter.string(from: TimeInterval(seconds)) ?? ""
+        return formatted
+    }
+    
     var body: some View {
         VStack {
             
-            Button("Preparation: \(prepariontsSelection)") {
+            Button("Preparation: \(timeToString(seconds: prepariontsSelection))") {
                 showPreparationsSheet.toggle()
-            }.sheet(isPresented: $showPreparationsSheet) {
+            }.padding(.bottom, 5)
+            .sheet(isPresented: $showPreparationsSheet) {
                 TimeSelectorView(secondsSelected: $prepariontsSelection)
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.hidden)
             }
             
-            Button("Workout: \(workoutSelection)") {
+            Button("Workout: \(timeToString(seconds: workoutSelection))") {
                 showWorkoutSheet.toggle()
-            }.sheet(isPresented: $showWorkoutSheet) {
+            }.padding(.bottom, 5)
+            .sheet(isPresented: $showWorkoutSheet) {
                 TimeSelectorView(secondsSelected: $workoutSelection)
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.hidden)
             }
             
-            Button("Pause: \(pauseSelection)") {
+            Button("Pause: \(timeToString(seconds: pauseSelection))") {
                 showPauseSheet.toggle()
-            }.sheet(isPresented: $showPauseSheet) {
+            }.padding(.bottom, 5)
+            .sheet(isPresented: $showPauseSheet) {
                 TimeSelectorView(secondsSelected: $pauseSelection)
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.hidden)
@@ -48,7 +64,8 @@ struct CreatorView: View {
             
             Button("Rounds: \(roundsSelected)") {
                 showRoundsSheets.toggle()
-            }.sheet(isPresented: $showRoundsSheets) {
+            }.padding(.bottom, 5)
+            .sheet(isPresented: $showRoundsSheets) {
                 RoundsSelectorView(roundsSelected: $roundsSelected)
                     .presentationDetents([.medium, .large])
                     .presentationDragIndicator(.hidden)
