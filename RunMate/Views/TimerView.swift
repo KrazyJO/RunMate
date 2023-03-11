@@ -21,8 +21,7 @@ struct TimerView: View {
     @StateObject var definition: TimerDefinition
     
     private var timeString: String {
-        let (_,m,s) = secondsToHoursMinutesSeconds(remainingTime)
-        return "\(withLeadingZero(m)):\(withLeadingZero(s))"
+        DateFormatter.secToTime(seconds: remainingTime)
     }
     
     private var playPauseButtonIcon: String {
@@ -174,14 +173,6 @@ struct TimerView: View {
         timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
         isRunning = true
         playPauseIcon = Icons.pause
-    }
-    
-    private func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int, Int) {
-        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-    
-    private func withLeadingZero(_ iput: Int) -> String {
-        return iput < 10 ? "0\(iput)" : "\(iput)"
     }
     
 }
