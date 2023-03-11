@@ -20,18 +20,18 @@ struct Step {
 }
 
 class TimerDefinition: ObservableObject {
-    
+
     var stack = [Step]()
     @Published var stepCounter = 0
     var rounds: Int
-    
+
     var currentStep: Step? {
         if stepCounter >= stack.count {
             return nil
         }
         return stack[stepCounter]
     }
-    
+
     init(preparation: Int, workout: Int, pause: Int, rounds: Int) {
         self.rounds = rounds
         stack.append(Step(type: .preparation, time: preparation, round: 1))
@@ -41,18 +41,18 @@ class TimerDefinition: ObservableObject {
         }
         stack.removeLast()
     }
-    
+
     func nextStep() {
         if stepCounter < stack.count {
-            stepCounter = stepCounter + 1
+            stepCounter += 1
         }
     }
-    
+
     func previousStep() {
         if stepCounter > 0 {
-            stepCounter = stepCounter - 1
+            stepCounter -= 1
         }
-        
+
     }
-    
+
 }

@@ -11,7 +11,7 @@ extension Text {
     func normal() -> Text {
         return self.font(.system(size: 24))
     }
-    
+
     func large() -> Text {
         return self.font(.system(size: 78))
     }
