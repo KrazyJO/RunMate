@@ -17,6 +17,9 @@
 		C46212C729BCB3FB003F380B /* DateFormatterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46212C629BCB3FB003F380B /* DateFormatterTest.swift */; };
 		C46212CC29BCCBB3003F380B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = C46212CB29BCCBB3003F380B /* .swiftlint.yml */; };
 		C46212CF29BCCF52003F380B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C46212CE29BCCF52003F380B /* README.md */; };
+		C46212D129BCE8A0003F380B /* PreparationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46212D029BCE8A0003F380B /* PreparationView.swift */; };
+		C4BAAEAB29C254DB001AC41F /* NavigationPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BAAEAA29C254DB001AC41F /* NavigationPath.swift */; };
+		C4BAAEAD29C2554A001AC41F /* NavigationPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4BAAEAC29C2554A001AC41F /* NavigationPathTests.swift */; };
 		C4CC9EC629A2971300117D9E /* RunMateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EC529A2971300117D9E /* RunMateApp.swift */; };
 		C4CC9EC829A2971300117D9E /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CC9EC729A2971300117D9E /* TimerView.swift */; };
 		C4CC9ECA29A2971300117D9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4CC9EC929A2971300117D9E /* Assets.xcassets */; };
@@ -59,6 +62,9 @@
 		C46212C629BCB3FB003F380B /* DateFormatterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTest.swift; sourceTree = "<group>"; };
 		C46212CB29BCCBB3003F380B /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		C46212CE29BCCF52003F380B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		C46212D029BCE8A0003F380B /* PreparationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationView.swift; sourceTree = "<group>"; };
+		C4BAAEAA29C254DB001AC41F /* NavigationPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPath.swift; sourceTree = "<group>"; };
+		C4BAAEAC29C2554A001AC41F /* NavigationPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPathTests.swift; sourceTree = "<group>"; };
 		C4CC9EC229A2971300117D9E /* RunMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CC9EC529A2971300117D9E /* RunMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateApp.swift; sourceTree = "<group>"; };
 		C4CC9EC729A2971300117D9E /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -104,10 +110,12 @@
 		C422252129ABDD0600649908 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C422251929AA5F1400649908 /* ActionButtons.swift */,
 				C422251D29AA756000649908 /* CreatorView.swift */,
 				C4CC9EC729A2971300117D9E /* TimerView.swift */,
 				C422252229ABDD4200649908 /* TimeSelectorView.swift */,
 				C422252429ABE12000649908 /* RoundsSelectorView.swift */,
+				C46212D029BCE8A0003F380B /* PreparationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -141,11 +149,11 @@
 				C422252129ABDD0600649908 /* Views */,
 				C4CC9EEF29A2A2BB00117D9E /* Extensions */,
 				C4CC9EC529A2971300117D9E /* RunMateApp.swift */,
-				C422251929AA5F1400649908 /* ActionButtons.swift */,
 				C422251B29AA701E00649908 /* Icons.swift */,
+				C4DB827029B372E2004A16A7 /* TimerDefinition.swift */,
+				C4BAAEAA29C254DB001AC41F /* NavigationPath.swift */,
 				C4CC9EC929A2971300117D9E /* Assets.xcassets */,
 				C4CC9ECB29A2971300117D9E /* Preview Content */,
-				C4DB827029B372E2004A16A7 /* TimerDefinition.swift */,
 			);
 			path = RunMate;
 			sourceTree = "<group>";
@@ -164,6 +172,7 @@
 				C4CC9ED629A2971400117D9E /* RunMateTests.swift */,
 				C4DB827229B3754A004A16A7 /* TimerDefinitionTest.swift */,
 				C46212C629BCB3FB003F380B /* DateFormatterTest.swift */,
+				C4BAAEAC29C2554A001AC41F /* NavigationPathTests.swift */,
 			);
 			path = RunMateTests;
 			sourceTree = "<group>";
@@ -351,6 +360,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C46212D129BCE8A0003F380B /* PreparationView.swift in Sources */,
 				C4CC9EC829A2971300117D9E /* TimerView.swift in Sources */,
 				C4CC9EC629A2971300117D9E /* RunMateApp.swift in Sources */,
 				C4DB827129B372E2004A16A7 /* TimerDefinition.swift in Sources */,
@@ -359,6 +369,7 @@
 				C46212C529BCB3C3003F380B /* DateFormatter+SecToTime.swift in Sources */,
 				C422252329ABDD4200649908 /* TimeSelectorView.swift in Sources */,
 				C422251A29AA5F1400649908 /* ActionButtons.swift in Sources */,
+				C4BAAEAB29C254DB001AC41F /* NavigationPath.swift in Sources */,
 				C422252029AB7AFD00649908 /* View+EdgeBorder.swift in Sources */,
 				C422252529ABE12000649908 /* RoundsSelectorView.swift in Sources */,
 				C422251E29AA756000649908 /* CreatorView.swift in Sources */,
@@ -369,6 +380,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4BAAEAD29C2554A001AC41F /* NavigationPathTests.swift in Sources */,
 				C4DB827329B3754A004A16A7 /* TimerDefinitionTest.swift in Sources */,
 				C4CC9ED729A2971400117D9E /* RunMateTests.swift in Sources */,
 				C46212C729BCB3FB003F380B /* DateFormatterTest.swift in Sources */,

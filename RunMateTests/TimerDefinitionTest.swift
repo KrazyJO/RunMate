@@ -12,21 +12,17 @@ class TimerDefinitionTest: XCTestCase {
 
     func testInitialization() {
         let definition = TimerDefinition(preparation: 10, workout: 30, pause: 10, rounds: 2)
-        XCTAssertEqual(definition.stack.count, 4)
+        XCTAssertEqual(definition.stack.count, 3)
 
         var stackEntry = definition.stack[0]
-        XCTAssertEqual(stackEntry.type, .preparation)
-        XCTAssertEqual(stackEntry.time, 10)
-
-        stackEntry = definition.stack[1]
         XCTAssertEqual(stackEntry.type, .workout)
         XCTAssertEqual(stackEntry.time, 30)
 
-        stackEntry = definition.stack[2]
+        stackEntry = definition.stack[1]
         XCTAssertEqual(stackEntry.type, .pause)
         XCTAssertEqual(stackEntry.time, 10)
 
-        stackEntry = definition.stack[3]
+        stackEntry = definition.stack[2]
         XCTAssertEqual(stackEntry.type, .workout)
         XCTAssertEqual(stackEntry.time, 30)
     }
@@ -34,7 +30,7 @@ class TimerDefinitionTest: XCTestCase {
     func testNextStep() {
         let definition = TimerDefinition(preparation: 10, workout: 30, pause: 10, rounds: 2)
         definition.nextStep()
-        XCTAssertEqual(definition.stack.count, 4)
+        XCTAssertEqual(definition.stack.count, 3)
     }
 
     func testNextStepOnLastStep() {
@@ -45,7 +41,7 @@ class TimerDefinitionTest: XCTestCase {
         definition.nextStep()
         definition.nextStep()
         definition.nextStep()
-        XCTAssertEqual(definition.stepCounter, 4)
+        XCTAssertEqual(definition.stepCounter, 3)
     }
 
     func testPreviousStep() {
@@ -65,10 +61,10 @@ class TimerDefinitionTest: XCTestCase {
     func testCurrentStep() {
         let definition = TimerDefinition(preparation: 10, workout: 30, pause: 10, rounds: 2)
         var currentStep = definition.currentStep
-        XCTAssertEqual(currentStep?.type, .preparation)
+        XCTAssertEqual(currentStep?.type, .workout)
 
         definition.nextStep()
         currentStep = definition.currentStep
-        XCTAssertEqual(currentStep?.type, .workout)
+        XCTAssertEqual(currentStep?.type, .pause)
     }
 }

@@ -24,6 +24,9 @@ class TimerDefinition: ObservableObject {
     var stack = [Step]()
     @Published var stepCounter = 0
     var rounds: Int
+    let preparation: Int
+    let workout: Int
+    let pause: Int
 
     var currentStep: Step? {
         if stepCounter >= stack.count {
@@ -34,7 +37,14 @@ class TimerDefinition: ObservableObject {
 
     init(preparation: Int, workout: Int, pause: Int, rounds: Int) {
         self.rounds = rounds
-        stack.append(Step(type: .preparation, time: preparation, round: 1))
+        self.preparation = preparation
+        self.pause = pause
+        self.workout = workout
+        
+        buildStack()
+    }
+    
+    func buildStack() {
         for round in 1...rounds {
             stack.append(Step(type: .workout, time: workout, round: round))
             stack.append(Step(type: .pause, time: pause, round: round))
