@@ -14,6 +14,8 @@ enum ActionsTypes {
 }
 
 struct ActionButtons: View {
+    
+    typealias Action = ( () -> Void)?
 
     private let forwardAction: (() -> Void)?
     private let backwardAction: (() -> Void)?
@@ -21,11 +23,11 @@ struct ActionButtons: View {
 
     private var playPauseButtonIcon: Icons
 
-    init(playPauseIcon: Icons, forwardAction: ( () -> Void)? = nil, backwardAction: ( () -> Void)? = nil, playPauseAction: ( () -> Void)? = nil) {
+    init(playPauseIcon: Icons, onForward: Action = nil, onBackward: Action = nil, onPlayPause: Action = nil) {
         self.playPauseButtonIcon = playPauseIcon
-        self.forwardAction = forwardAction
-        self.backwardAction = backwardAction
-        self.playPauseAction = playPauseAction
+        self.forwardAction = onForward
+        self.backwardAction = onBackward
+        self.playPauseAction = onPlayPause
     }
 
     var body: some View {

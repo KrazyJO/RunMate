@@ -21,7 +21,7 @@ struct RunMateApp: App {
                         case .timer(let definition):
                             TimerView(definition: definition)
                         case .preparation(let definition):
-                            PreparationView(duration: definition.preparation, counter: definition.preparation, definition: definition)
+                            PreparationView(definition: definition)
                         }
                     }
             }

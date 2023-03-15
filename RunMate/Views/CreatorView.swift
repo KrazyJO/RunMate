@@ -74,17 +74,21 @@ struct CreatorView: View {
             }
 
             Button("START") {
-                let def = TimerDefinition(preparation: prepariontsSelection,
-                                          workout: workoutSelection,
-                                          pause: pauseSelection,
-                                          rounds: roundsSelected)
-                
-                navigationPath.toPreparation(definition: def)
+                toPreparationsView()
             }
 
         }
         .navigationTitle("Setup")
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    func toPreparationsView() {
+        let def = TimerDefinition(preparation: prepariontsSelection,
+                                  workout: workoutSelection,
+                                  pause: pauseSelection,
+                                  rounds: roundsSelected)
+        
+        navigationPath.toPreparation(definition: def)
     }
 }
 
