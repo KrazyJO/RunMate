@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "A5CE0349-D217-4C17-A0BB-FC6835F3E36F",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "testTimeoutsEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:RunMate.xcodeproj",
+        "identifier" : "C4CC9ED129A2971400117D9E",
+        "name" : "RunMateTests"
+      }
+    }
+  ],
+  "version" : 1
+}
