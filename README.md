@@ -3,7 +3,11 @@
 Just a Simple Timer app.
 
 ### Development
-How to setup?
+Some steps for the development
+
+#### How to setup?
+- just check out
+- run :)
 
 #### running all unit tests
 In XCode you can use [command + u] to run all unit tests.
@@ -12,3 +16,4 @@ The coverage is tracked, too.
 
 #### Swiftlint 
 ```brew install swiftlint```
+SwiftLint runs on every build [command + b]
