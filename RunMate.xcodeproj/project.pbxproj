@@ -65,6 +65,7 @@
 		C46212D029BCE8A0003F380B /* PreparationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparationView.swift; sourceTree = "<group>"; };
 		C4BAAEAA29C254DB001AC41F /* NavigationPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPath.swift; sourceTree = "<group>"; };
 		C4BAAEAC29C2554A001AC41F /* NavigationPathTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationPathTests.swift; sourceTree = "<group>"; };
+		C4BAAEAE29C26B70001AC41F /* TestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = TestPlan.xctestplan; sourceTree = "<group>"; };
 		C4CC9EC229A2971300117D9E /* RunMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4CC9EC529A2971300117D9E /* RunMateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunMateApp.swift; sourceTree = "<group>"; };
 		C4CC9EC729A2971300117D9E /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -172,6 +173,7 @@
 				C4CC9ED629A2971400117D9E /* RunMateTests.swift */,
 				C4DB827229B3754A004A16A7 /* TimerDefinitionTest.swift */,
 				C46212C629BCB3FB003F380B /* DateFormatterTest.swift */,
+				C4BAAEAE29C26B70001AC41F /* TestPlan.xctestplan */,
 				C4BAAEAC29C2554A001AC41F /* NavigationPathTests.swift */,
 			);
 			path = RunMateTests;
