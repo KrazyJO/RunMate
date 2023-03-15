@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct CreatorView: View {
+    
+    @EnvironmentObject private var navigationPath: NavigationPath
 
     @State private var showRoundsSheets = false
     @State private var showPreparationsSheet = false
@@ -71,14 +73,22 @@ struct CreatorView: View {
                     .presentationDragIndicator(.hidden)
             }
 
-            NavigationLink("START") {
-                let def = TimerDefinition(preparation: prepariontsSelection, workout: workoutSelection, pause: pauseSelection, rounds: roundsSelected)
-                TimerView(definition: def)
-            }.padding(.top, 20).font(.system(size: 32))
+            Button("START") {
+                toPreparationsView()
+            }
 
         }
         .navigationTitle("Setup")
         .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    func toPreparationsView() {
+        let def = TimerDefinition(preparation: prepariontsSelection,
+                                  workout: workoutSelection,
+                                  pause: pauseSelection,
+                                  rounds: roundsSelected)
+        
+        navigationPath.toPreparation(definition: def)
     }
 }
 

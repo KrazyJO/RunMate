@@ -9,13 +9,23 @@ import SwiftUI
 
 @main
 struct RunMateApp: App {
+    @StateObject var navigataionPath = NavigationPath()
 
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
+            NavigationStack(path: $navigataionPath.path) {
                 // Einstiegsview: Setup, Kalender, Starten
                 CreatorView()
+                    .navigationDestination(for: Routes.self) { view in
+                        switch view {
+                        case .timer(let definition):
+                            TimerView(definition: definition)
+                        case .preparation(let definition):
+                            PreparationView(definition: definition)
+                        }
+                    }
             }
+            .environmentObject(navigataionPath)
         }
     }
 }

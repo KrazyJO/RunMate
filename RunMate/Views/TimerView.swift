@@ -54,9 +54,9 @@ struct TimerView: View {
                 ZStack {
                     ActionButtons(playPauseIcon: playPauseIcon) {
                         forwardPressed()
-                    } backwardAction: {
+                    } onBackward: {
                         backwardPressed()
-                    } playPauseAction: {
+                    } onPlayPause: {
                         playPausePressed()
                     }
                 }
